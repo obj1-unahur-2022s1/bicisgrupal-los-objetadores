@@ -1,0 +1,54 @@
+import bicicleta.*
+import accesorios.*
+
+describe "Test de bicicletas" {
+	
+	test "Bici 1" {
+	
+		const bici1 = new Bicicleta(rodado=28, largo=150, marca="Olmo")
+		const farolito1 = new Farolito()
+		bici1.accesorios(farolito1)
+		
+		assert.equals(85, bici1.altura())
+		assert.equals(34, bici1.velocidadDeCrucero())
+		assert.equals(0, bici1.carga())
+		assert.equals(14.5, bici1.peso())
+		assert.that(bici1.tieneLuz())
+		assert.that(bici1.cantidadDeAccesoriosLivianos() == 1)
+		assert.that(bici1.marca() == "Olmo")
+	}
+
+	test "Bici 2" {
+	
+		const bici2 = new Bicicleta(rodado=26, largo=110, marca="Legnano")
+		const farolito2 = new Farolito()
+		const canasto1 = new Canasto(volumen=8)
+		const morralDeBici1 = new MorralDeBici(largo=21, tieneOjoDeGato=true)
+		bici2.accesorios(farolito2)
+		bici2.accesorios(canasto1)
+		bici2.accesorios(morralDeBici1)
+		
+		assert.equals(80, bici2.altura())
+		assert.equals(28, bici2.velocidadDeCrucero())
+		assert.equals(23, bici2.carga())
+		assert.equals(15.5, bici2.peso())
+		assert.that(bici2.tieneLuz())
+		assert.that(bici2.cantidadDeAccesoriosLivianos() == 2)
+		assert.that(bici2.marca() == "Legnano")
+	}
+	
+	test "Bici 3" {
+	
+		const bici3 = new Bicicleta(rodado=20, largo=90, marca="Legnano")
+		const morralDeBici2 = new MorralDeBici(largo=6, tieneOjoDeGato=false)
+		bici3.accesorios(morralDeBici2)
+		
+		assert.equals(65, bici3.altura())
+		assert.equals(22, bici3.velocidadDeCrucero())
+		assert.equals(2, bici3.carga())
+		assert.equals(11.2, bici3.peso())
+		assert.notThat(bici3.tieneLuz())
+		assert.that(bici3.cantidadDeAccesoriosLivianos() == 0)
+		assert.that(bici3.marca() == "Legnano")
+	}
+}
