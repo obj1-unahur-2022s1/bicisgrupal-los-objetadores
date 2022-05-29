@@ -18,4 +18,3 @@ class Bicicleta {
 	method quitarAccesorios(unAccesorio) { accesorios.remove(unAccesorio) }
 	method accesorios() = accesorios 
 }
-
