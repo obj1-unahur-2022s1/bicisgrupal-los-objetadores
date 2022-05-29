@@ -33,7 +33,7 @@ describe "Test de deposito" {
 		
 		// Test
 		
-		assert.equals(2, deposito1.bicisMasRapidas().size())
+		assert.equals([bici1,bici2], deposito1.bicisMasRapidas())
 		assert.that(deposito1.marcas() == #{"Legnano", "Olmo"})
 		assert.notThat(deposito1.esNocturno())
 		assert.that(deposito1.puedeLLevarCarga(10))
