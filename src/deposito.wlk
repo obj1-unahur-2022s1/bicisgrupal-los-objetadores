@@ -26,8 +26,9 @@ class Deposito {
 	/*
 	method parejasDeCompanieras() { 
 		const listaBicisCompanieras = [] 	
-		bicicletas.forEach({ b => 
-			if (not self.bicisCompanierasEnDepositoDe(b).isEmpty()) {
+		(0..bicicletas.size()-1)({ b =>
+			var elemento = bicicletas.get(b) 
+			if (not self.bicisCompanierasEnDepositoDe(elemento).isEmpty()) {
 				listaBicisCompanieras.addAll(self.bicisCompanierasEnDepositoDe(b))	
 			}
 		})
