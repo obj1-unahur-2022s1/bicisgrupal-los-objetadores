@@ -23,24 +23,17 @@ class Deposito {
 	// Desafios
 	method hayBicisCompanieras() = 
 		bicicletas.any({ b => not self.bicisCompanierasEnDepositoDe(b).isEmpty() })
-	/*
-	method parejasDeCompanieras() { 
-		const listaBicisCompanieras = [] 	
-		(0..bicicletas.size()-1)({ b =>
-			var elemento = bicicletas.get(b) 
-			if (not self.bicisCompanierasEnDepositoDe(elemento).isEmpty()) {
-				listaBicisCompanieras.addAll(self.bicisCompanierasEnDepositoDe(b))	
-			}
-		})
-		return listaBicisCompanieras	
-	}
-	*/
+	// method parejasDeCompanieras() 
 	method posicionPrimerBiciConLuz() = (0..bicicletas.size()-1).find({
 		b => bicicletas.get(b).tieneLuz()
-	})
+		})
 	method seHizoLaLuz() = 
 		(self.posicionPrimerBiciConLuz()..bicicletas.size()-1).all({
 			b => bicicletas.get(b).tieneLuz()
 		})	
 }
 
+class ParDeBicis {
+	var property primerBici
+	var property segundaBici
+}
