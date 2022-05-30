@@ -32,8 +32,3 @@ class Deposito {
 			b => bicicletas.get(b).tieneLuz()
 		})	
 }
-
-class ParDeBicis {
-	var property primerBici
-	var property segundaBici
-}
